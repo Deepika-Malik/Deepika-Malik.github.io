@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Example - example-example46-production</title>
+  
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+  
+</head>
+<body ng-app="golApp">
+	<div ng-controller="GameOfLifeCntl">
+    
+  <h1>AngularJS Game of Life</h1>
+  Height: <input type="text" ng-model="height"/>
+  Width: <input type="text" ng-model="width"/>
+  <button ng-click="newGame()">New</button>
+  <button ng-click="next()">Next</button>
+  <button ng-click="autoplay()" ng-hide="started" ng-show="!started">AutoPlay</button>
+  <button ng-click="stop()" ng-hide="!started" ng-show="started">Stop</button>
+
+  <table id="board" border="1" >
+       <tr ng-repeat="row in board track by $index">
+          <td ng-repeat="cell in row track by $index" ng-click="cell.toggle()" class="{{cell.cssClass}}"> 
+          </td>
+      </tr> 
+  </table>
+
+  <p class="history" ng-show="history.length > 0">Previous steps (click to rewind)</p>
+  <table class="history">
+      <tr>
+          <td ng-repeat="step in history" ng-click="$parent.step($index)">{{$index}}</td>
+      </tr>
+  </table>
+    
+</div>
+<script src="js/golService.js"></script>
+<script src="js/golController.js"></script>
+
+
+<style> h1 {
+    font-size: 1.3em;
+    color: #844;
+    font-style: bold;
+    font-style: italic;
+}
+table#board td {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    border: solid 1px #ddd;
+}
+table#board td.off {
+    background-color: #FFB6C1;
+}
+table#board td.on {
+    background-color: #191970;
+}
+
+.history {
+    color: #777;
+}
+table.history td {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    border: solid 1px #eee;
+    background-color: #FFE4E1;
+}
+ </style>
+</body>
+</form>
+</html>
