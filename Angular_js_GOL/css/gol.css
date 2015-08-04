@@ -1,0 +1,31 @@
+h1 {
+    font-size: 1.3em;
+    color: #844;
+    font-style: bold;
+    font-style: italic;
+}
+table#board td {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    border: solid 1px #ddd;
+}
+table#board td.off {
+    background-color: #FFB6C1;
+}
+table#board td.on {
+    background-color: #191970;
+}
+
+.history {
+    color: #777;
+}
+table.history td {
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    border: solid 1px #eee;
+    background-color: #FFE4E1;
+}
