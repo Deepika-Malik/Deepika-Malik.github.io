@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
   <button ng-click="autoplay()" ng-hide="started" ng-show="!started">AutoPlay</button>
   <button ng-click="stop()" ng-hide="!started" ng-show="started">Stop</button>
 
-  <table id="board" border="1" >
+  <table id="board">
        <tr ng-repeat="row in board track by $index">
           <td ng-repeat="cell in row track by $index" ng-click="cell.toggle()" class="{{cell.cssClass}}"> 
           </td>
@@ -34,7 +34,7 @@
   </table>
     
 </div>
-<script src="js/golService.js"></script>
+<script src="js/golProvider.js"></script>
 <script src="js/golController.js"></script>
 
 </body>
